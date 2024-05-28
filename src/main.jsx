@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Global
       styles={`
         body {
-          background-color: #f4e7da; /* Sand-like color */
+          background-color: red; /* Red color */
         }
       `}
     />
