@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import { ChakraProvider, extendTheme, CSSReset, GlobalStyle } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme, CSSReset } from "@chakra-ui/react";
 
 const colors = {
   brand: {
@@ -11,18 +11,21 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+const theme = extendTheme({
+  colors,
+  styles: {
+    global: {
+      body: {
+        backgroundColor: "red",
+      },
+    },
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CSSReset />
-    <GlobalStyle
-      styles={`
-        body {
-          background-color: red; /* Red color */
-        }
-      `}
-    />
+    
     <ChakraProvider theme={theme}>
       <App />
     </ChakraProvider>
